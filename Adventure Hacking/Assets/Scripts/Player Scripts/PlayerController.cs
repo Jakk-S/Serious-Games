@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInputs;
 
+    [Header("Tutorial")]
+    [SerializeField] private bool inTuto;
+    private bool moveTuto = false;
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -26,6 +30,11 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Attempting Move!");
         moveInputs = context.ReadValue<Vector2>();
+        if (inTuto && !moveTuto)
+        {
+            moveTuto = true;
+            Camera.main.GetComponent<TutorialManager>().NewTuto();
+        }
     }
 
     public void OnEscape(InputAction.CallbackContext context)

@@ -1,15 +1,24 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HackController : MonoBehaviour
 {
     [SerializeField] private TMP_Text winText;
+    [SerializeField] private TMP_Text addCodeText;
+    [SerializeField] private GameObject codePrefab;
+    [SerializeField] private GameObject playerCode;
     
     private TMP_Text buttonCode;
     private Button ogButton;
+    private GameObject newButton;
 
     private bool codeFill = false, winTemp = false;
+
+    [Header("Tutorial")]
+    [SerializeField] private bool inTuto;
 
     public void OnCodeClick(Button clickedButton)
     {
@@ -42,13 +51,55 @@ public class HackController : MonoBehaviour
         codeFill = true;
         clickedButton.interactable = false;
         clickedButton.GetComponentInChildren<TMP_Text>().text = $"-{buttonCode.text}";
+
+        if (inTuto) Camera.main.GetComponent<TutorialManager>().NewTuto();
     }
 
     public void RunCode()
     {
         if (!codeFill) return;
 
-        if (winTemp) winText.text = "You Win!";
-        else winText.text = "You Lose!";
+        if (SceneManager.GetActiveScene().buildIndex == 0) StartCoroutine(LoadYourAsyncScene(1));
+        else
+        {
+            if (winTemp) winText.text = "You Win!";
+            else winText.text = "You Lose!";
+        }
+
+        if (inTuto) Camera.main.GetComponent<TutorialManager>().NewTuto();
+    }
+
+    public void OnHack(bool newCode)
+    {
+        if (!newCode || newButton != null) return;
+
+        addCodeText.text = "Adding New Code!";
+
+        StartCoroutine(AddingCode());
+    }
+
+    IEnumerator AddingCode()
+    {
+        yield return new WaitForSeconds(2.5f);
+        addCodeText.text = "";
+        newButton = Instantiate(codePrefab, playerCode.transform);
+
+        Button buttonComponent = newButton.GetComponent<Button>();
+
+        buttonComponent.onClick.RemoveAllListeners();
+        buttonComponent.onClick.AddListener(() => OnCodeClick(buttonComponent));
+    }
+
+    IEnumerator LoadYourAsyncScene(int sceneIndex)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
+
+        asyncLoad.allowSceneActivation = false;
+
+        winText.text = "WARPING!";
+
+        yield return new WaitForSeconds(2.5f);
+
+        asyncLoad.allowSceneActivation = true;
     }
 }

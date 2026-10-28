@@ -15,11 +15,15 @@ MonoBehaviour:
   sceneDatas_byGuid:
     keys:
     - 8c9cfa26abfee488c85f1582747f6a02
+    - 1c144973854839c488c4723af14016cb
+    - e6303d78c2a6ac24eada66ff54b22a5a
     values:
     - goDatas_byGlobalId:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-8c9cfa26abfee488c85f1582747f6a02-1653745235-0
         - globalObjectIdString: GlobalObjectId_V1-2-8c9cfa26abfee488c85f1582747f6a02-350028155-0
+        - globalObjectIdString: GlobalObjectId_V1-2-8c9cfa26abfee488c85f1582747f6a02-1315316914-0
+        - globalObjectIdString: GlobalObjectId_V1-2-8c9cfa26abfee488c85f1582747f6a02-3428564018200316034-4935984693287656344
         values:
         - colorIndex: 2
           iconNameOrGuid: 
@@ -29,5 +33,62 @@ MonoBehaviour:
           iconNameOrGuid: 
           isIconRecursive: 0
           isColorRecursive: 1
+        - colorIndex: 3
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-1c144973854839c488c4723af14016cb-1653745235-0
+        - globalObjectIdString: GlobalObjectId_V1-2-1c144973854839c488c4723af14016cb-350028155-0
+        - globalObjectIdString: GlobalObjectId_V1-2-1c144973854839c488c4723af14016cb-1315316914-0
+        - globalObjectIdString: GlobalObjectId_V1-2-1c144973854839c488c4723af14016cb-3428564018200316034-4935984693287656344
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-e6303d78c2a6ac24eada66ff54b22a5a-1653745235-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e6303d78c2a6ac24eada66ff54b22a5a-350028155-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e6303d78c2a6ac24eada66ff54b22a5a-1315316914-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e6303d78c2a6ac24eada66ff54b22a5a-3428564018200316034-4935984693287656344
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
   bookmarks: []
-  bookmarkedScenePaths: []
+  bookmarkedScenePaths:
+  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/TutorialScene0.unity
+  - Assets/Scenes/TutorialScene1.unity
