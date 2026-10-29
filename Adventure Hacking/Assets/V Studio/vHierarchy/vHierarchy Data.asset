@@ -17,6 +17,7 @@ MonoBehaviour:
     - 8c9cfa26abfee488c85f1582747f6a02
     - 1c144973854839c488c4723af14016cb
     - e6303d78c2a6ac24eada66ff54b22a5a
+    - df1545b6668baa347bdf732eb476abf9
     values:
     - goDatas_byGlobalId:
         keys:
@@ -87,8 +88,31 @@ MonoBehaviour:
           iconNameOrGuid: 
           isIconRecursive: 0
           isColorRecursive: 0
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-df1545b6668baa347bdf732eb476abf9-1653745235-0
+        - globalObjectIdString: GlobalObjectId_V1-2-df1545b6668baa347bdf732eb476abf9-350028155-0
+        - globalObjectIdString: GlobalObjectId_V1-2-df1545b6668baa347bdf732eb476abf9-1315316914-0
+        - globalObjectIdString: GlobalObjectId_V1-2-df1545b6668baa347bdf732eb476abf9-3428564018200316034-4935984693287656344
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
   bookmarks: []
   bookmarkedScenePaths:
-  - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/TutorialScene0.unity
   - Assets/Scenes/TutorialScene1.unity
+  - Assets/Scenes/Scene0.unity

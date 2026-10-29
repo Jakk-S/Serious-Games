@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
 
     public void OnReset()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private IEnumerator NewCode()

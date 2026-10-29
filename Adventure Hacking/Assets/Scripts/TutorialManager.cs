@@ -38,8 +38,8 @@ public class TutorialManager : MonoBehaviour
         switch (tuto)
         {
             case Tutorials.None:
-                if (SceneManager.GetActiveScene().buildIndex == 1) tutoText.text = "Press Spacebar to restart the game!";
-                else tutoText.text = "";
+                // if (SceneManager.GetActiveScene().buildIndex == 1) tutoText.text = "Press Spacebar to restart the game!";
+                tutoText.text = "";
                 break;
             case Tutorials.Move:
                 MoveTuto();

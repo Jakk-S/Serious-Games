@@ -22,7 +22,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Camera.main.GetComponent<GameController>().Hacking) return;
+        if (Camera.main.GetComponent<GameController>().Hacking)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
         rb.linearVelocity = moveInputs * moveSpeed;
     }
 

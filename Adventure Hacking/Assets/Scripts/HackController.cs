@@ -46,7 +46,7 @@ public class HackController : MonoBehaviour
     {
         if (ogButton == null) return;
 
-        if (buttonCode.text == "if (true)") winTemp = true;
+        if (buttonCode.text == "if (true)" || buttonCode.text == "num = 2") winTemp = true;
 
         codeFill = true;
         clickedButton.interactable = false;
@@ -59,12 +59,19 @@ public class HackController : MonoBehaviour
     {
         if (!codeFill) return;
 
-        if (SceneManager.GetActiveScene().buildIndex == 0) StartCoroutine(LoadYourAsyncScene(1));
-        else
+        int currScene = SceneManager.GetActiveScene().buildIndex;
+        if (winTemp)
         {
-            if (winTemp) winText.text = "You Win!";
-            else winText.text = "You Lose!";
+            if (currScene <= 1) StartCoroutine(LoadAsyncScene(currScene + 1));
+            else winText.text = "You Win!";
         }
+        else winText.text = "You Lose!\nPress Space to Reload";
+        //if (currScene <= 1) StartCoroutine(LoadAsyncScene(currScene));
+        //else
+        //{
+        //    if (winTemp) winText.text = "You Win!";
+        //    else winText.text = "You Lose!\nPress Space to Reload";
+        //}
 
         if (inTuto) Camera.main.GetComponent<TutorialManager>().NewTuto();
     }
@@ -90,7 +97,7 @@ public class HackController : MonoBehaviour
         buttonComponent.onClick.AddListener(() => OnCodeClick(buttonComponent));
     }
 
-    IEnumerator LoadYourAsyncScene(int sceneIndex)
+    IEnumerator LoadAsyncScene(int sceneIndex)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
 
